@@ -15,6 +15,6 @@ class CharacterRepository @Inject constructor(
 
 
     fun getDeals(context: Context) = performGetOperation(
-        jsonCall = { jsonDataSource.getDeals(context) }
+//        jsonCall = { jsonDataSource.getDeals(context) }
     )
 }
