@@ -1,5 +1,7 @@
 package com.example.diary
 
+import com.example.diary.data.json.JsonDataSource
+import com.example.diary.data.repository.DealRepository
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,5 +15,9 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+    @Test
+    fun ff() {
+        println(DealRepository.getAllDeals())
     }
 }

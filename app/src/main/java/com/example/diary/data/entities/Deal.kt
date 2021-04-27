@@ -2,13 +2,14 @@ package com.example.diary.data.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 import java.sql.Timestamp
 
 data class Deal(
-    @PrimaryKey
-    val id: Int,
-    val date_start: Timestamp,
-    val date_finish: Timestamp,
-    val name: String,
-    val description: String
+    @SerializedName("id") val id : Int,
+    @SerializedName("date_start") var dateStart : String,
+    @SerializedName("date_finish") var dateFinish : String,
+    @SerializedName("name") val name : String,
+    @SerializedName("description") var description : String
+
 )

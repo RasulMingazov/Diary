@@ -5,13 +5,13 @@
     "date_start":"147600000",
     "date_finish":"147610000",
     "name":"My task",
-    "description":"Описание моего дела"
-},
+    "description":"Description 1"
+  },
   {
     "id":2,
     "date_start":"147600000",
     "date_finish":"147610000",
     "name":"My task 2",
-    "description":"Описание моего дела 2"
+    "description":"Description 2"
   }
 ]

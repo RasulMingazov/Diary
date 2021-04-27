@@ -1,4 +1,4 @@
-package com.example.rikipedia.utils
+package com.example.diary.utils
 /*
  * Copyright (C) 2018 The Android Open Source Project
  *
