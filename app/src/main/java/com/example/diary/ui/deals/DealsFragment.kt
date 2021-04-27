@@ -1,24 +1,20 @@
 package com.example.diary.ui.deals
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TimePicker
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.applandeo.materialcalendarview.listeners.OnDayClickListener
 import com.example.diary.R
 import com.example.diary.data.entities.Deal
 import com.example.diary.databinding.DealsFragmentBinding
 import com.example.diary.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.item_deal.*
-import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -43,11 +39,11 @@ class DealsFragment: Fragment(), DealsAdapter.DealItemListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.calendarView.setOnDayClickListener(OnDayClickListener { eventDay ->
+        binding.calendarView.setOnDayClickListener { eventDay ->
             val clickedDayCalendar = eventDay.calendar
             chTimestamp = clickedDayCalendar.timeInMillis
             setupRecyclerView()
-        })
+        }
     }
 
     private fun setupRecyclerView() {
@@ -57,6 +53,7 @@ class DealsFragment: Fragment(), DealsAdapter.DealItemListener {
         adapter.setItems(ArrayList(makeArrayOfDay()))
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun makeArrayOfDay() : ArrayList<Deal>{
         val sf = SimpleDateFormat("dd.MM.yyyy")
         val dateCh = Date(chTimestamp)

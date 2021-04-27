@@ -18,5 +18,14 @@ companion object {
         }
         return deals
     }
+   fun getDeal(id: Int): Deal? {
+       val deals = getAllDeals()
+       for (deal: Deal in deals!!) {
+           if (id == deal.id) {
+               return deal
+           }
+       }
+       return null
+    }
 }
 }

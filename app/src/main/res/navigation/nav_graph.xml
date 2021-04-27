@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/dealsDetailFragment"
-        android:name="com.example.diary.ui.dealsdetail.DealsDetailFragment"
-        android:label="Character Detail"
+        android:name="com.example.diary.ui.dealsdetail.DealDetailFragment"
+        android:label="Detail"
         tools:layout="@layout/deal_fragment" />
 </navigation>

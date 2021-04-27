@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
+
 import com.example.diary.data.entities.Deal
 import com.example.diary.databinding.ItemDealBinding
 import java.text.SimpleDateFormat
@@ -46,14 +45,14 @@ class DealViewHolder(private val itemBinding: ItemDealBinding, private val liste
         itemBinding.root.setOnClickListener(this)
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "SimpleDateFormat")
     fun bind(item: Deal) {
         this.deal = item
         itemBinding.taskName.text = deal.name
 
-        val sf = SimpleDateFormat("HH:mm:ss")
-        val dateS = Date(deal.dateStart.toLong())
-        val dateF = Date(deal.dateFinish.toLong())
+        val sf = SimpleDateFormat("HH:mm")
+        val dateS = Date(deal.dateStart.toLong()*1000L)
+        val dateF = Date(deal.dateFinish.toLong()*1000L)
 
         val dateT = sf.format(dateS) + " - " + sf.format(dateF)
 
